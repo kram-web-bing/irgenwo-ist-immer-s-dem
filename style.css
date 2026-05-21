@@ -1,0 +1,83 @@
+.git {
+  position: absolute;
+  bottom: 20px; /* Abstand nach unten */
+  right: 20px;  /* Abstand nach rechts */
+  width: 50px;  /* Falls das Bild zu groß ist, hier die Breite anpassen */
+  height: auto;
+}
+
+
+
+
+body {
+  background-color: black;
+  /* Aktiviert Flexbox für die gesamte Seite */
+  display: flex;
+  /* Stapelt Überschrift, Text und Button untereinander */
+  flex-direction: column;
+  /* Zentriert alles horizontal */
+  align-items: center;
+  /* Sorgt dafür, dass die Inhalte oben starten (optional) */
+  justify-content: flex-start; 
+  margin: 0;
+  padding: 20px;
+}
+
+.lila {
+  color: violet;
+  text-align: center;
+}
+
+.yellow {
+  color: yellow;
+  text-align: center;
+  font-family: "Playwrite GB S", cursive;
+}
+
+.neon-btn {
+
+  /* HIER entfernst du display: flex und flex-direction! */
+  padding: 12px 30px;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  
+  background: transparent;
+  color: #ff66cc;
+  border: 2px solid #ff66cc;
+  border-radius: 8px;
+  
+  transition: all 0.3s ease-in-out;
+  
+  text-shadow: 0 0 8px #ff66cc;
+  box-shadow: 0 0 10px rgba(255, 102, 204, 0.4), 
+              inset 0 0 10px rgba(255, 102, 204, 0.4);
+}
+
+/* Hover-Effekt: Wechselt zu dem Gelb aus deinem Text */
+.neon-btn:hover {
+  color: #fffb00;
+  border-color: #fffb00;
+  background: rgba(255, 251, 0, 0.05);
+  
+  text-shadow: 0 0 12px #fffb00, 0 0 20px #fffb00;
+  box-shadow: 0 0 20px rgba(255, 251, 0, 0.6), 
+              inset 0 0 15px rgba(255, 251, 0, 0.4);
+  
+  transform: scale(1.05);
+}
+
+/* Effekt beim Klicken */
+.neon-btn:active {
+  transform: scale(0.98);
+}
+
+
+.seiten-quelle {
+  color: red;
+  position: fixed; /* 'fixed' sorgt dafür, dass es auch beim Scrollen unten bleibt */
+  bottom: 15px;
+  right: 15px;
+  font-size: 0.9rem; /* Macht die Quellenangabe dezent kleiner */
+}

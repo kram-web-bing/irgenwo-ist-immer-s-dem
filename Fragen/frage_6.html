@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage 5</title>
+    <link rel="stylesheet" href="fragen.css">
+</head>
+<body>
+
+
+
+<div><button id="oeffnen-btn" class="ab"><-</button> <h1 class="yellow">In welche Klasse geht Ina vor den Ferien?</h1></div>
+
+    <div id="mein-modal" class="modal-hintergrund">
+  <div class="modal-inhalt">
+    <span id="schliessen-btn" class="schliessen">&times;</span>
+    <h2 style="color: red;">!Achtung!</h2>
+    <p style="color: rgba(255, 255, 0, 0.333);">Möchtest du das Quiz wirklich Abbrechen?</p>
+    <button onclick="window.location.href='../index.html'" class="ja">Ja</button>
+  </div>
+</div>
+
+
+  <div>
+    <button onclick="zeigeText('Leider auch falsch!')" class="neon-btn">A) 5</button>.............
+    <button onclick="window.location.href='frage_7.html'"    class="neon-btn">B) 6</button>
+  </div>
+  <div> 
+    <button   onclick="zeigeText('Moin, das war Falsch')" class="neon-btn">C) 8 (ja, die Acht steht da extra)</button>.............
+    
+    <button onclick="zeigeText('Knapp daneben!')" class="neon-btn">D) 9</button>
+  </div>
+
+  <p id="meinText" style="display: none; color: red; font-weight: bold; margin-top: 20px;"></p>
+
+
+<script>
+    function zeigeText(hinweis) {
+        var textElement = document.getElementById("meinText");
+        
+        // Wenn kein Hinweis übergeben wurde (also bei Button D)
+        if (hinweis === null) {
+            textElement.style.display = "none"; // Text wird unsichtbar
+            textElement.innerHTML = "";         // Text wird geleert
+            
+            // Hier kannst du optional eintragen, was stattdessen passieren soll,
+            // z.B. Weiterleitung zur nächsten Frage:
+            // alert("Richtig! Weiter zu Frage 2.");
+        } else {
+            // Wenn ein Hinweis übergeben wurde (Buttons A, B, C)
+            textElement.innerHTML = hinweis;
+            textElement.style.display = "block"; // Text wird sichtbar
+        }
+    }
+</script>
+
+
+<script>// Elemente aus dem HTML holen
+const modal = document.getElementById('mein-modal');
+const oeffnenBtn = document.getElementById('oeffnen-btn');
+const schliessenBtn = document.getElementById('schliessen-btn');
+
+// Fenster öffnen, wenn der Button geklickt wird
+oeffnenBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+// Fenster schließen, wenn auf das 'X' geklickt wird
+schliessenBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Komfort-Funktion: Fenster schließen, wenn man irgendwo AUẞERHALB des Fensters klickt
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});</script>
+
+
+</body>
+</html>
